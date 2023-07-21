@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE7D2A6B115D0027C43E /* PaylogApp.swift */; };
+		4889DE802A6B115D0027C43E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE7F2A6B115D0027C43E /* ContentView.swift */; };
+		4889DE822A6B115F0027C43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE812A6B115F0027C43E /* Assets.xcassets */; };
+		4889DE852A6B115F0027C43E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE842A6B115F0027C43E /* Preview Assets.xcassets */; };
+		4889DE8F2A6B115F0027C43E /* PaylogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE8E2A6B115F0027C43E /* PaylogTests.swift */; };
+		4889DE992A6B115F0027C43E /* PaylogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE982A6B115F0027C43E /* PaylogUITests.swift */; };
+		4889DE9B2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4889DE8B2A6B115F0027C43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4889DE722A6B115D0027C43E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4889DE792A6B115D0027C43E;
+			remoteInfo = Paylog;
+		};
+		4889DE952A6B115F0027C43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4889DE722A6B115D0027C43E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4889DE792A6B115D0027C43E;
+			remoteInfo = Paylog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4889DE7A2A6B115D0027C43E /* Paylog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4889DE7D2A6B115D0027C43E /* PaylogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogApp.swift; sourceTree = "<group>"; };
+		4889DE7F2A6B115D0027C43E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4889DE812A6B115F0027C43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4889DE842A6B115F0027C43E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4889DE8A2A6B115F0027C43E /* PaylogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaylogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4889DE8E2A6B115F0027C43E /* PaylogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogTests.swift; sourceTree = "<group>"; };
+		4889DE942A6B115F0027C43E /* PaylogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaylogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4889DE982A6B115F0027C43E /* PaylogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogUITests.swift; sourceTree = "<group>"; };
+		4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4889DE772A6B115D0027C43E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE872A6B115F0027C43E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE912A6B115F0027C43E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4889DE712A6B115D0027C43E = {
+			isa = PBXGroup;
+			children = (
+				4889DE7C2A6B115D0027C43E /* Paylog */,
+				4889DE8D2A6B115F0027C43E /* PaylogTests */,
+				4889DE972A6B115F0027C43E /* PaylogUITests */,
+				4889DE7B2A6B115D0027C43E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4889DE7B2A6B115D0027C43E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4889DE7A2A6B115D0027C43E /* Paylog.app */,
+				4889DE8A2A6B115F0027C43E /* PaylogTests.xctest */,
+				4889DE942A6B115F0027C43E /* PaylogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4889DE7C2A6B115D0027C43E /* Paylog */ = {
+			isa = PBXGroup;
+			children = (
+				4889DE7D2A6B115D0027C43E /* PaylogApp.swift */,
+				4889DE7F2A6B115D0027C43E /* ContentView.swift */,
+				4889DE812A6B115F0027C43E /* Assets.xcassets */,
+				4889DE832A6B115F0027C43E /* Preview Content */,
+			);
+			path = Paylog;
+			sourceTree = "<group>";
+		};
+		4889DE832A6B115F0027C43E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4889DE842A6B115F0027C43E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4889DE8D2A6B115F0027C43E /* PaylogTests */ = {
+			isa = PBXGroup;
+			children = (
+				4889DE8E2A6B115F0027C43E /* PaylogTests.swift */,
+			);
+			path = PaylogTests;
+			sourceTree = "<group>";
+		};
+		4889DE972A6B115F0027C43E /* PaylogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4889DE982A6B115F0027C43E /* PaylogUITests.swift */,
+				4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */,
+			);
+			path = PaylogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4889DE792A6B115D0027C43E /* Paylog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4889DE9E2A6B115F0027C43E /* Build configuration list for PBXNativeTarget "Paylog" */;
+			buildPhases = (
+				4889DE762A6B115D0027C43E /* Sources */,
+				4889DE772A6B115D0027C43E /* Frameworks */,
+				4889DE782A6B115D0027C43E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Paylog;
+			productName = Paylog;
+			productReference = 4889DE7A2A6B115D0027C43E /* Paylog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4889DE892A6B115F0027C43E /* PaylogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4889DEA12A6B115F0027C43E /* Build configuration list for PBXNativeTarget "PaylogTests" */;
+			buildPhases = (
+				4889DE862A6B115F0027C43E /* Sources */,
+				4889DE872A6B115F0027C43E /* Frameworks */,
+				4889DE882A6B115F0027C43E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4889DE8C2A6B115F0027C43E /* PBXTargetDependency */,
+			);
+			name = PaylogTests;
+			productName = PaylogTests;
+			productReference = 4889DE8A2A6B115F0027C43E /* PaylogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4889DE932A6B115F0027C43E /* PaylogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4889DEA42A6B115F0027C43E /* Build configuration list for PBXNativeTarget "PaylogUITests" */;
+			buildPhases = (
+				4889DE902A6B115F0027C43E /* Sources */,
+				4889DE912A6B115F0027C43E /* Frameworks */,
+				4889DE922A6B115F0027C43E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4889DE962A6B115F0027C43E /* PBXTargetDependency */,
+			);
+			name = PaylogUITests;
+			productName = PaylogUITests;
+			productReference = 4889DE942A6B115F0027C43E /* PaylogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4889DE722A6B115D0027C43E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4889DE792A6B115D0027C43E = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					4889DE892A6B115F0027C43E = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4889DE792A6B115D0027C43E;
+					};
+					4889DE932A6B115F0027C43E = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4889DE792A6B115D0027C43E;
+					};
+				};
+			};
+			buildConfigurationList = 4889DE752A6B115D0027C43E /* Build configuration list for PBXProject "Paylog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4889DE712A6B115D0027C43E;
+			productRefGroup = 4889DE7B2A6B115D0027C43E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4889DE792A6B115D0027C43E /* Paylog */,
+				4889DE892A6B115F0027C43E /* PaylogTests */,
+				4889DE932A6B115F0027C43E /* PaylogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4889DE782A6B115D0027C43E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4889DE852A6B115F0027C43E /* Preview Assets.xcassets in Resources */,
+				4889DE822A6B115F0027C43E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE882A6B115F0027C43E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE922A6B115F0027C43E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4889DE762A6B115D0027C43E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4889DE802A6B115D0027C43E /* ContentView.swift in Sources */,
+				4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE862A6B115F0027C43E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4889DE8F2A6B115F0027C43E /* PaylogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4889DE902A6B115F0027C43E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4889DE9B2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift in Sources */,
+				4889DE992A6B115F0027C43E /* PaylogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4889DE8C2A6B115F0027C43E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4889DE792A6B115D0027C43E /* Paylog */;
+			targetProxy = 4889DE8B2A6B115F0027C43E /* PBXContainerItemProxy */;
+		};
+		4889DE962A6B115F0027C43E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4889DE792A6B115D0027C43E /* Paylog */;
+			targetProxy = 4889DE952A6B115F0027C43E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4889DE9C2A6B115F0027C43E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4889DE9D2A6B115F0027C43E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4889DE9F2A6B115F0027C43E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paylog/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.Paylog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4889DEA02A6B115F0027C43E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paylog/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.Paylog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4889DEA22A6B115F0027C43E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.PaylogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paylog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Paylog";
+			};
+			name = Debug;
+		};
+		4889DEA32A6B115F0027C43E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.PaylogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paylog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Paylog";
+			};
+			name = Release;
+		};
+		4889DEA52A6B115F0027C43E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.PaylogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Paylog;
+			};
+			name = Debug;
+		};
+		4889DEA62A6B115F0027C43E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pentagonlabs.PaylogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Paylog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4889DE752A6B115D0027C43E /* Build configuration list for PBXProject "Paylog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4889DE9C2A6B115F0027C43E /* Debug */,
+				4889DE9D2A6B115F0027C43E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4889DE9E2A6B115F0027C43E /* Build configuration list for PBXNativeTarget "Paylog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4889DE9F2A6B115F0027C43E /* Debug */,
+				4889DEA02A6B115F0027C43E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4889DEA12A6B115F0027C43E /* Build configuration list for PBXNativeTarget "PaylogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4889DEA22A6B115F0027C43E /* Debug */,
+				4889DEA32A6B115F0027C43E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4889DEA42A6B115F0027C43E /* Build configuration list for PBXNativeTarget "PaylogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4889DEA52A6B115F0027C43E /* Debug */,
+				4889DEA62A6B115F0027C43E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4889DE722A6B115D0027C43E /* Project object */;
+}
