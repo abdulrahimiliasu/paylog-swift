@@ -7,13 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4833D69D2A6C2B0700BB8BE5 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D69C2A6C2B0700BB8BE5 /* PlanStore.swift */; };
+		4833D69F2A6C9FAD00BB8BE5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D69E2A6C9FAD00BB8BE5 /* SettingsView.swift */; };
+		4833D6A12A6CA2A500BB8BE5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A02A6CA2A500BB8BE5 /* ProfileView.swift */; };
+		4833D6A32A6D27E600BB8BE5 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A22A6D27E600BB8BE5 /* ViewConstants.swift */; };
+		4833D6A52A6D283600BB8BE5 /* DataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A42A6D283600BB8BE5 /* DataConstants.swift */; };
+		4833D6A72A6D9AC700BB8BE5 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A62A6D9AC700BB8BE5 /* ProfileStore.swift */; };
+		4833D6A92A6D9C4300BB8BE5 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A82A6D9C4300BB8BE5 /* SettingsStore.swift */; };
+		4833D6AB2A6DD4FF00BB8BE5 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6AA2A6DD4FF00BB8BE5 /* PlanView.swift */; };
+		4852A4C32A706A0000A49C8F /* EmptyPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */; };
+		4879EAA72A7442C100E5429F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAA62A7442C100E5429F /* PrimaryButton.swift */; };
+		4879EAAB2A7534DD00E5429F /* AddFlowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAAA2A7534DD00E5429F /* AddFlowModalView.swift */; };
+		4879EAAE2A7586C200E5429F /* ModalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAAD2A7586C200E5429F /* ModalExtension.swift */; };
 		4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE7D2A6B115D0027C43E /* PaylogApp.swift */; };
-		4889DE802A6B115D0027C43E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE7F2A6B115D0027C43E /* ContentView.swift */; };
 		4889DE822A6B115F0027C43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE812A6B115F0027C43E /* Assets.xcassets */; };
 		4889DE852A6B115F0027C43E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE842A6B115F0027C43E /* Preview Assets.xcassets */; };
 		4889DE8F2A6B115F0027C43E /* PaylogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE8E2A6B115F0027C43E /* PaylogTests.swift */; };
 		4889DE992A6B115F0027C43E /* PaylogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE982A6B115F0027C43E /* PaylogUITests.swift */; };
 		4889DE9B2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */; };
+		4889DEAC2A6B154E0027C43E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DEAB2A6B154E0027C43E /* Constants.swift */; };
+		4889DEAE2A6B17850027C43E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4889DEAD2A6B17850027C43E /* Launch Screen.storyboard */; };
+		4889DEB02A6B18E30027C43E /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DEAF2A6B18E30027C43E /* OnBoardingView.swift */; };
+		489FC1202A6F1F3300462072 /* EditFlowRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489FC11F2A6F1F3300462072 /* EditFlowRowView.swift */; };
+		48B1930B2A7D626300722D56 /* AddNewFlowToPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1930A2A7D626300722D56 /* AddNewFlowToPlanView.swift */; };
+		48B1930D2A7D687C00722D56 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1930C2A7D687C00722D56 /* AddPlanView.swift */; };
+		48B193102A7EB5F500722D56 /* FlowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1930F2A7EB5F500722D56 /* FlowUtils.swift */; };
+		48F1FE0F2A6BD6B100A0CC38 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE0E2A6BD6B100A0CC38 /* MainView.swift */; };
+		48F1FE202A6BDB9400A0CC38 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE132A6BDB9400A0CC38 /* Inter-VariableFont_slnt,wght.ttf */; };
+		48F1FE212A6BDB9400A0CC38 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE152A6BDB9400A0CC38 /* Inter-Medium.ttf */; };
+		48F1FE222A6BDB9400A0CC38 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE162A6BDB9400A0CC38 /* Inter-Light.ttf */; };
+		48F1FE232A6BDB9400A0CC38 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE172A6BDB9400A0CC38 /* Inter-Thin.ttf */; };
+		48F1FE242A6BDB9400A0CC38 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE182A6BDB9400A0CC38 /* Inter-Bold.ttf */; };
+		48F1FE252A6BDB9400A0CC38 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE192A6BDB9400A0CC38 /* Inter-Regular.ttf */; };
+		48F1FE262A6BDB9400A0CC38 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1A2A6BDB9400A0CC38 /* Inter-ExtraBold.ttf */; };
+		48F1FE272A6BDB9400A0CC38 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1B2A6BDB9400A0CC38 /* Inter-ExtraLight.ttf */; };
+		48F1FE282A6BDB9400A0CC38 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1C2A6BDB9400A0CC38 /* Inter-Black.ttf */; };
+		48F1FE292A6BDB9400A0CC38 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1D2A6BDB9400A0CC38 /* Inter-SemiBold.ttf */; };
+		48F1FE2A2A6BDB9400A0CC38 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1E2A6BDB9400A0CC38 /* OFL.txt */; };
+		48F1FE2B2A6BDB9400A0CC38 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48F1FE1F2A6BDB9400A0CC38 /* README.txt */; };
+		48F1FE2E2A6BDF3B00A0CC38 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE2D2A6BDF3B00A0CC38 /* Plan.swift */; };
+		48F1FE302A6BDF9200A0CC38 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE2F2A6BDF9200A0CC38 /* Flow.swift */; };
+		48F1FE332A6BE00E00A0CC38 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE322A6BE00E00A0CC38 /* UserProfile.swift */; };
+		48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE352A6BE31B00A0CC38 /* FlowCardView.swift */; };
+		48F1FE382A6BEA1600A0CC38 /* PlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE372A6BEA1600A0CC38 /* PlanCardView.swift */; };
+		48F1FE3B2A6BF13800A0CC38 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +71,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4833D69C2A6C2B0700BB8BE5 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
+		4833D69E2A6C9FAD00BB8BE5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4833D6A02A6CA2A500BB8BE5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4833D6A22A6D27E600BB8BE5 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
+		4833D6A42A6D283600BB8BE5 /* DataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConstants.swift; sourceTree = "<group>"; };
+		4833D6A62A6D9AC700BB8BE5 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		4833D6A82A6D9C4300BB8BE5 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		4833D6AA2A6DD4FF00BB8BE5 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlansView.swift; sourceTree = "<group>"; };
+		48764AC92A87BD05002AD979 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4879EAA62A7442C100E5429F /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		4879EAAA2A7534DD00E5429F /* AddFlowModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlowModalView.swift; sourceTree = "<group>"; };
+		4879EAAD2A7586C200E5429F /* ModalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalExtension.swift; sourceTree = "<group>"; };
 		4889DE7A2A6B115D0027C43E /* Paylog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4889DE7D2A6B115D0027C43E /* PaylogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogApp.swift; sourceTree = "<group>"; };
-		4889DE7F2A6B115D0027C43E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4889DE812A6B115F0027C43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4889DE842A6B115F0027C43E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4889DE8A2A6B115F0027C43E /* PaylogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaylogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +93,33 @@
 		4889DE942A6B115F0027C43E /* PaylogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaylogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4889DE982A6B115F0027C43E /* PaylogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogUITests.swift; sourceTree = "<group>"; };
 		4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4889DEAB2A6B154E0027C43E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4889DEAD2A6B17850027C43E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4889DEAF2A6B18E30027C43E /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		489FC11F2A6F1F3300462072 /* EditFlowRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlowRowView.swift; sourceTree = "<group>"; };
+		48B1930A2A7D626300722D56 /* AddNewFlowToPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFlowToPlanView.swift; sourceTree = "<group>"; };
+		48B1930C2A7D687C00722D56 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		48B1930F2A7EB5F500722D56 /* FlowUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUtils.swift; sourceTree = "<group>"; };
+		48F1FE0E2A6BD6B100A0CC38 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		48F1FE132A6BDB9400A0CC38 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		48F1FE152A6BDB9400A0CC38 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		48F1FE162A6BDB9400A0CC38 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		48F1FE172A6BDB9400A0CC38 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		48F1FE182A6BDB9400A0CC38 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		48F1FE192A6BDB9400A0CC38 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		48F1FE1A2A6BDB9400A0CC38 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		48F1FE1B2A6BDB9400A0CC38 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		48F1FE1C2A6BDB9400A0CC38 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		48F1FE1D2A6BDB9400A0CC38 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		48F1FE1E2A6BDB9400A0CC38 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		48F1FE1F2A6BDB9400A0CC38 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		48F1FE2C2A6BDBB900A0CC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		48F1FE2D2A6BDF3B00A0CC38 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		48F1FE2F2A6BDF9200A0CC38 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		48F1FE322A6BE00E00A0CC38 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		48F1FE352A6BE31B00A0CC38 /* FlowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCardView.swift; sourceTree = "<group>"; };
+		48F1FE372A6BEA1600A0CC38 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
+		48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +147,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4879EAAC2A7586A000E5429F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4879EAAD2A7586C200E5429F /* ModalExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		4889DE712A6B115D0027C43E = {
 			isa = PBXGroup;
 			children = (
+				48764AC92A87BD05002AD979 /* README.md */,
 				4889DE7C2A6B115D0027C43E /* Paylog */,
 				4889DE8D2A6B115F0027C43E /* PaylogTests */,
 				4889DE972A6B115F0027C43E /* PaylogUITests */,
@@ -94,10 +179,19 @@
 		4889DE7C2A6B115D0027C43E /* Paylog */ = {
 			isa = PBXGroup;
 			children = (
+				48B1930E2A7D8B1700722D56 /* utils */,
+				4879EAAC2A7586A000E5429F /* extensions */,
+				48F1FE2C2A6BDBB900A0CC38 /* Info.plist */,
+				4889DEB12A6B36720027C43E /* components */,
+				4889DEAA2A6B151B0027C43E /* constants */,
+				4889DEA92A6B15100027C43E /* viewmodel */,
+				4889DEA82A6B15040027C43E /* model */,
+				4889DEA72A6B14FD0027C43E /* views */,
 				4889DE7D2A6B115D0027C43E /* PaylogApp.swift */,
-				4889DE7F2A6B115D0027C43E /* ContentView.swift */,
 				4889DE812A6B115F0027C43E /* Assets.xcassets */,
+				48F1FE122A6BDB9400A0CC38 /* Inter */,
 				4889DE832A6B115F0027C43E /* Preview Content */,
+				4889DEAD2A6B17850027C43E /* Launch Screen.storyboard */,
 			);
 			path = Paylog;
 			sourceTree = "<group>";
@@ -125,6 +219,123 @@
 				4889DE9A2A6B115F0027C43E /* PaylogUITestsLaunchTests.swift */,
 			);
 			path = PaylogUITests;
+			sourceTree = "<group>";
+		};
+		4889DEA72A6B14FD0027C43E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4889DEAF2A6B18E30027C43E /* OnBoardingView.swift */,
+				48F1FE0E2A6BD6B100A0CC38 /* MainView.swift */,
+				4833D69E2A6C9FAD00BB8BE5 /* SettingsView.swift */,
+				4833D6A02A6CA2A500BB8BE5 /* ProfileView.swift */,
+				4833D6AA2A6DD4FF00BB8BE5 /* PlanView.swift */,
+				489FC11F2A6F1F3300462072 /* EditFlowRowView.swift */,
+				4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */,
+				48B1930A2A7D626300722D56 /* AddNewFlowToPlanView.swift */,
+				48B1930C2A7D687C00722D56 /* AddPlanView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		4889DEA82A6B15040027C43E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE312A6BDFFD00A0CC38 /* user */,
+				48F1FE2D2A6BDF3B00A0CC38 /* Plan.swift */,
+				48F1FE2F2A6BDF9200A0CC38 /* Flow.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4889DEA92A6B15100027C43E /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				4833D69C2A6C2B0700BB8BE5 /* PlanStore.swift */,
+				4833D6A62A6D9AC700BB8BE5 /* ProfileStore.swift */,
+				4833D6A82A6D9C4300BB8BE5 /* SettingsStore.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		4889DEAA2A6B151B0027C43E /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				4889DEAB2A6B154E0027C43E /* Constants.swift */,
+				4833D6A22A6D27E600BB8BE5 /* ViewConstants.swift */,
+				4833D6A42A6D283600BB8BE5 /* DataConstants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		4889DEB12A6B36720027C43E /* components */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE392A6BF10600A0CC38 /* buttons */,
+				48F1FE342A6BE30100A0CC38 /* plan */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		48B1930E2A7D8B1700722D56 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				48B1930F2A7EB5F500722D56 /* FlowUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		48F1FE122A6BDB9400A0CC38 /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE132A6BDB9400A0CC38 /* Inter-VariableFont_slnt,wght.ttf */,
+				48F1FE142A6BDB9400A0CC38 /* static */,
+				48F1FE1E2A6BDB9400A0CC38 /* OFL.txt */,
+				48F1FE1F2A6BDB9400A0CC38 /* README.txt */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
+		48F1FE142A6BDB9400A0CC38 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE152A6BDB9400A0CC38 /* Inter-Medium.ttf */,
+				48F1FE162A6BDB9400A0CC38 /* Inter-Light.ttf */,
+				48F1FE172A6BDB9400A0CC38 /* Inter-Thin.ttf */,
+				48F1FE182A6BDB9400A0CC38 /* Inter-Bold.ttf */,
+				48F1FE192A6BDB9400A0CC38 /* Inter-Regular.ttf */,
+				48F1FE1A2A6BDB9400A0CC38 /* Inter-ExtraBold.ttf */,
+				48F1FE1B2A6BDB9400A0CC38 /* Inter-ExtraLight.ttf */,
+				48F1FE1C2A6BDB9400A0CC38 /* Inter-Black.ttf */,
+				48F1FE1D2A6BDB9400A0CC38 /* Inter-SemiBold.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		48F1FE312A6BDFFD00A0CC38 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE322A6BE00E00A0CC38 /* UserProfile.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		48F1FE342A6BE30100A0CC38 /* plan */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE352A6BE31B00A0CC38 /* FlowCardView.swift */,
+				48F1FE372A6BEA1600A0CC38 /* PlanCardView.swift */,
+				4879EAAA2A7534DD00E5429F /* AddFlowModalView.swift */,
+			);
+			path = plan;
+			sourceTree = "<group>";
+		};
+		48F1FE392A6BF10600A0CC38 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */,
+				4879EAA62A7442C100E5429F /* PrimaryButton.swift */,
+			);
+			path = buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +442,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F1FE2A2A6BDB9400A0CC38 /* OFL.txt in Resources */,
+				48F1FE202A6BDB9400A0CC38 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				48F1FE252A6BDB9400A0CC38 /* Inter-Regular.ttf in Resources */,
+				4889DEAE2A6B17850027C43E /* Launch Screen.storyboard in Resources */,
+				48F1FE2B2A6BDB9400A0CC38 /* README.txt in Resources */,
+				48F1FE242A6BDB9400A0CC38 /* Inter-Bold.ttf in Resources */,
+				48F1FE292A6BDB9400A0CC38 /* Inter-SemiBold.ttf in Resources */,
 				4889DE852A6B115F0027C43E /* Preview Assets.xcassets in Resources */,
+				48F1FE262A6BDB9400A0CC38 /* Inter-ExtraBold.ttf in Resources */,
+				48F1FE212A6BDB9400A0CC38 /* Inter-Medium.ttf in Resources */,
+				48F1FE282A6BDB9400A0CC38 /* Inter-Black.ttf in Resources */,
+				48F1FE222A6BDB9400A0CC38 /* Inter-Light.ttf in Resources */,
+				48F1FE272A6BDB9400A0CC38 /* Inter-ExtraLight.ttf in Resources */,
 				4889DE822A6B115F0027C43E /* Assets.xcassets in Resources */,
+				48F1FE232A6BDB9400A0CC38 /* Inter-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +481,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4889DE802A6B115D0027C43E /* ContentView.swift in Sources */,
+				4852A4C32A706A0000A49C8F /* EmptyPlansView.swift in Sources */,
+				4833D6A32A6D27E600BB8BE5 /* ViewConstants.swift in Sources */,
+				48F1FE3B2A6BF13800A0CC38 /* RoundButton.swift in Sources */,
+				48F1FE0F2A6BD6B100A0CC38 /* MainView.swift in Sources */,
+				48F1FE2E2A6BDF3B00A0CC38 /* Plan.swift in Sources */,
+				4833D6AB2A6DD4FF00BB8BE5 /* PlanView.swift in Sources */,
+				4833D6A92A6D9C4300BB8BE5 /* SettingsStore.swift in Sources */,
+				4889DEB02A6B18E30027C43E /* OnBoardingView.swift in Sources */,
+				4833D6A72A6D9AC700BB8BE5 /* ProfileStore.swift in Sources */,
+				48B1930B2A7D626300722D56 /* AddNewFlowToPlanView.swift in Sources */,
+				4833D6A52A6D283600BB8BE5 /* DataConstants.swift in Sources */,
+				48F1FE302A6BDF9200A0CC38 /* Flow.swift in Sources */,
 				4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */,
+				489FC1202A6F1F3300462072 /* EditFlowRowView.swift in Sources */,
+				4833D69D2A6C2B0700BB8BE5 /* PlanStore.swift in Sources */,
+				48F1FE382A6BEA1600A0CC38 /* PlanCardView.swift in Sources */,
+				4879EAAE2A7586C200E5429F /* ModalExtension.swift in Sources */,
+				4889DEAC2A6B154E0027C43E /* Constants.swift in Sources */,
+				48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */,
+				48F1FE332A6BE00E00A0CC38 /* UserProfile.swift in Sources */,
+				4879EAA72A7442C100E5429F /* PrimaryButton.swift in Sources */,
+				4833D6A12A6CA2A500BB8BE5 /* ProfileView.swift in Sources */,
+				4833D69F2A6C9FAD00BB8BE5 /* SettingsView.swift in Sources */,
+				4879EAAB2A7534DD00E5429F /* AddFlowModalView.swift in Sources */,
+				48B1930D2A7D687C00722D56 /* AddPlanView.swift in Sources */,
+				48B193102A7EB5F500722D56 /* FlowUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,16 +662,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Paylog/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U9R22D5GV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Paylog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Paylog;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,16 +696,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Paylog/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U9R22D5GV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Paylog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Paylog;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

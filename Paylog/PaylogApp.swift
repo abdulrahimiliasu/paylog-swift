@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct PaylogApp: App {
+    @StateObject private var planStore: PlanStore = .init()
+    @StateObject private var profileStore: ProfileStore = .init()
+    @StateObject private var settingsStore: SettingsStore = .init()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(planStore)
+                .environmentObject(profileStore)
+                .environmentObject(settingsStore)
         }
     }
 }
