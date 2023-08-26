@@ -14,9 +14,16 @@ enum PlanViewTextFields: Hashable {
 struct PlanView: View {
     @Binding var plan: Plan
     @EnvironmentObject var planStore: PlanStore
-    @FocusState private var currentTextFieldFocus: PlanViewTextFields?
+    @EnvironmentObject var supabaseRepository: SupabaseRepository
 
+    @FocusState private var currentTextFieldFocus: PlanViewTextFields?
     @State private var isFlowModalPresented: Bool = false
+
+    func deleteFlow(flowId: UUID) async {
+        await withAlert {
+            try await supabaseRepository.deleteFlow(flowId: flowId)
+        }
+    }
 
     var body: some View {
         GeometryReader { _ in
@@ -39,17 +46,18 @@ struct PlanView: View {
                         EditFlowRowView(flowToEdit: $flow)
                     }
                     .onDelete { indexSet in
-                        plan.flows.remove(at: indexSet.first!)
+                        let flowToRemove = plan.flows.remove(at: indexSet.first!)
+                        Task { await deleteFlow(flowId: flowToRemove.id) }
                     }
                 }
             }
-            .overlay {
-                if isFlowModalPresented {
-                    Color.black.opacity(0.05)
-                        .edgesIgnoringSafeArea(.all)
+            .blur(radius: isFlowModalPresented ? 1 : 0)
+            .onTapGesture {
+                guard isFlowModalPresented else { return }
+                withAnimation(springAnimation) {
+                    isFlowModalPresented.toggle()
                 }
             }
-            .allowsHitTesting(!isFlowModalPresented)
         }
         .safeAreaInset(edge: .bottom, content: {
             AddNewFlowToPlanView(plan: $plan, willAddNewFlow: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
@@ -58,6 +66,7 @@ struct PlanView: View {
         })
         .overlay {
             AddFlowModalView(plan: $plan, isFlowModalPresented: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
+                .padding(5)
         }
     }
 }
@@ -66,5 +75,6 @@ struct PlanView_Previews: PreviewProvider {
     static var previews: some View {
         PlanView(plan: .constant(Plan(title: "Some Plan", description: "Some desc", flows: [Flow(title: "Bus Ticket", price: 1000, isChecked: false)])))
             .environmentObject(PlanStore())
+            .environmentObject(SupabaseRepository.getInstance(supabaseClient))
     }
 }

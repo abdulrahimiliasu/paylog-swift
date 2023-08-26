@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Plan: Identifiable {
+struct Plan: Identifiable, Codable {
     var id = UUID()
     var title: String
     var description: String
+    var currency: String? = nil
     var flows: [Flow]
 }

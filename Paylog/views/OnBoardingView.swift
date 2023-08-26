@@ -10,7 +10,9 @@ import SwiftUI
 struct OnBoardingView: View {
     var body: some View {
         VStack {
-            TopView()
+            TopDescriptionView(
+                heading: "Plan all your\nfinances \nin one place",
+                subHeading: "Your personal finance calculator all in one place\nStreamline your finance.Your All-in-One solution for effortless expense and income planning!")
             BottomView()
         }
     }
@@ -22,7 +24,10 @@ struct OnBoardingView_Previews: PreviewProvider {
     }
 }
 
-struct TopView: View {
+struct TopDescriptionView: View {
+    let heading: String
+    let subHeading: String
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
@@ -30,11 +35,11 @@ struct TopView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120)
-                Text("Plan all your\nfinances \nin one place")
+                Text(heading)
                     .font(.custom("Inter-SemiBold", size: 34))
                     .fontWeight(.semibold)
                     .padding(.leading, 30)
-                Text("Your personal finance calculator all in one place\nStreamline your finance.Your All-in-One solution for effortless expense and income planning!")
+                Text(subHeading)
                     .font(.custom("Inter-SemiBold", size: 14))
                     .fontWeight(.medium)
                     .foregroundColor(.secondary)

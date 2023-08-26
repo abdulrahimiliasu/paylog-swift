@@ -8,18 +8,12 @@
 import Combine
 import Foundation
 
+@MainActor
 class PlanStore: ObservableObject {
     @Published var plans: [Plan] = .init()
+    let repository: SupabaseRepository
 
-    init() {
-        // TODO: Remove this
-        plans.append(
-            Plan(title: "New Plan",
-                 description: "Some Descriptions",
-                 flows: [Flow(title: "Bus Ticket", price: 200, isChecked: false),
-                         Flow(title: "Drinks", price: 1200, isChecked: false, type: .expense),
-                         Flow(title: "Friends Payment", price: 2200, isChecked: false, type: .income)]))
-    }
+    init() { self.repository = SupabaseRepository.getInstance(supabaseClient) }
 
     func getTotalFlowAmountOf(plan: Plan) -> Int {
         return plan.flows.reduce(into: 0) { total, flow in
@@ -32,11 +26,10 @@ class PlanStore: ObservableObject {
 
     func isPlansEmpty() -> Bool { return plans.isEmpty }
 
-    func addPlan(plan: Plan) {
-        plans.append(plan)
+    func updatePlanTo(_ planToUpdate: Plan) {
+        guard let index = plans.firstIndex(where: { $0.id == planToUpdate.id }) else { return }
+        plans[index] = planToUpdate
     }
-
-    func updatePlan(plan: Plan) {}
 
     func deletePlan(index: Int) {
         plans.remove(at: index)

@@ -12,6 +12,7 @@ struct PaylogApp: App {
     @StateObject private var planStore: PlanStore = .init()
     @StateObject private var profileStore: ProfileStore = .init()
     @StateObject private var settingsStore: SettingsStore = .init()
+    @StateObject private var supabaseRepository: SupabaseRepository = .getInstance(supabaseClient)
 
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,7 @@ struct PaylogApp: App {
                 .environmentObject(planStore)
                 .environmentObject(profileStore)
                 .environmentObject(settingsStore)
+                .environmentObject(supabaseRepository)
         }
     }
 }

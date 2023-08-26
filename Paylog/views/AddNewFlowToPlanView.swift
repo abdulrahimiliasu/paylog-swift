@@ -13,18 +13,20 @@ struct AddNewFlowToPlanView: View {
 
     @Binding var plan: Plan
     @Binding var willAddNewFlow: Bool
-    
+
     var focusedField: FocusState<PlanViewTextFields?>.Binding
 
     var body: some View {
         let currency = currencies[defaultCurrency]
-        let totalAmount = planStore.getTotalFlowAmountOf(plan: plan)
+        let totalAmount = withAnimation(springAnimation) {
+            planStore.getTotalFlowAmountOf(plan: plan)
+        }
 
         return HStack {
             Text("Total: \(currency ?? "$") \(totalAmount)")
                 .bold()
             Spacer()
-            RoundButton(image: willAddNewFlow ? "chevron.down.circle.fill" : "plus.circle.fill"){
+            RoundButton(image: willAddNewFlow ? "chevron.down.circle.fill" : "plus.circle.fill") {
                 self.focusedField.wrappedValue = .modalTitle
                 withAnimation(springAnimation) { willAddNewFlow.toggle() }
             }
@@ -34,7 +36,7 @@ struct AddNewFlowToPlanView: View {
 
 struct AddNewFlowToPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewFlowToPlanView(plan: .constant(previewDummyPlan), willAddNewFlow: .constant(false),  focusedField: FocusState<PlanViewTextFields?>().projectedValue)
-        .environmentObject(PlanStore())
+        AddNewFlowToPlanView(plan: .constant(previewDummyPlan), willAddNewFlow: .constant(false), focusedField: FocusState<PlanViewTextFields?>().projectedValue)
+            .environmentObject(PlanStore())
     }
 }

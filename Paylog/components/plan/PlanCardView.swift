@@ -5,17 +5,24 @@
 //  Created by Abdulrahim Illo on 2023. 07. 22..
 //
 
+import AlertKit
 import SwiftUI
 
 struct PlanCardView: View {
     @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @EnvironmentObject var planStore: PlanStore
+    @EnvironmentObject var supabaseRepository: SupabaseRepository
+
     @State private var isOpen: Bool = false
     @Binding var plan: Plan
 
-    func onDelete() {
-        let index = planStore.plans.firstIndex { item in item.id == plan.id }
-        planStore.deletePlan(index: index!)
+    func onDelete() async {
+        await withAlert("Deleting plan") {
+            try await supabaseRepository.deletePlan(planId: plan.id)
+            let index = planStore.plans.firstIndex { item in item.id == plan.id }
+            planStore.deletePlan(index: index!)
+            AlertKitAPI.showSuccess(title: "Plan deleted Successfully")
+        }
     }
 
     func expandCard() { withAnimation(springAnimation) { isOpen.toggle() }}
@@ -47,10 +54,10 @@ struct PlanCardView: View {
                             .font(.callout)
                         Spacer()
                         RoundButton(image: "trash.circle.fill", font: .title, foregroundColor: .red, symbolRenderingMode: .monochrome) {
-                            self.onDelete()
+                            Task { await self.onDelete() }
                         }
                         NavigationLink {
-                            EditPlanView(planToEdit: $plan)
+                            EditPlanView(plan: plan)
                         } label: {
                             Label("Edit Plan", systemImage: "square.and.pencil.circle.fill")
                                 .labelStyle(.iconOnly)
@@ -61,7 +68,7 @@ struct PlanCardView: View {
                     ScrollView {
                         LazyVStack(spacing: 10) {
                             ForEach($plan.flows) { $flow in
-                                FlowCardView(flow: $flow)
+                                FlowCardView(flow: $flow, planId: plan.id)
                             }
                         }
                     }
@@ -70,37 +77,51 @@ struct PlanCardView: View {
             }
         }
         .padding(20)
+        .scaleEffect(isOpen ? 1.01 : 1)
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color(AppColors.grey))
         )
         .contextMenu {
-            Button(role: .destructive) { self.onDelete() } label: { Label("Delete", systemImage: "trash.circle.fill") }
+            Button(role: .destructive) {
+                Task { await self.onDelete() }
+            } label: { Label("Delete", systemImage: "trash") }
         }
-        .scaleEffect(isOpen ? 1.01 : 1)
     }
 }
 
 struct EditPlanView: View {
-    @Binding var planToEdit: Plan
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    let plan: Plan
 
-    func didSavePlan() {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var supabaseRepository: SupabaseRepository
+    @EnvironmentObject var profileStore: ProfileStore
+    @EnvironmentObject var planStore: PlanStore
+    @State private var planToEdit: Plan = .init(title: "", description: "", flows: [])
+
+    func didSavePlan() async {
+        await withAlert("Saving plan") {
+            guard let user = profileStore.user else { return }
+            try await supabaseRepository.updatePlan(userId: user.id, plan: planToEdit)
+            try await supabaseRepository.updateFlows(planId: planToEdit.id, flows: planToEdit.flows)
+            planStore.updatePlanTo(planToEdit)
+        }
         notificationHaptics.notificationOccurred(.success)
         presentationMode.wrappedValue.dismiss()
     }
 
     var body: some View {
         PlanView(plan: $planToEdit)
-            .navigationTitle("Edit Plan")
+            .navigationTitle("Edit plan")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Save") {
-                        didSavePlan()
+                        Task { await didSavePlan() }
                     }
                 }
             }
+            .onAppear { planToEdit = plan }
     }
 }
 
@@ -115,5 +136,7 @@ struct PlanCardView_Previews: PreviewProvider {
             )
         )
         .environmentObject(PlanStore())
+        .environmentObject(SupabaseRepository.getInstance(supabaseClient))
+        .environmentObject(ProfileStore())
     }
 }

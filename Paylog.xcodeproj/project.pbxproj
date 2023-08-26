@@ -15,10 +15,21 @@
 		4833D6A72A6D9AC700BB8BE5 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A62A6D9AC700BB8BE5 /* ProfileStore.swift */; };
 		4833D6A92A6D9C4300BB8BE5 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6A82A6D9C4300BB8BE5 /* SettingsStore.swift */; };
 		4833D6AB2A6DD4FF00BB8BE5 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4833D6AA2A6DD4FF00BB8BE5 /* PlanView.swift */; };
+		484D5EDC2A912FF200F57151 /* EntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D5EDB2A912FF200F57151 /* EntityToModelMapper.swift */; };
 		4852A4C32A706A0000A49C8F /* EmptyPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */; };
+		48764ACC2A87BFBD002AD979 /* SwipeActions in Frameworks */ = {isa = PBXBuildFile; productRef = 48764ACB2A87BFBD002AD979 /* SwipeActions */; };
+		48764ACF2A87C15A002AD979 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48764ACE2A87C15A002AD979 /* Supabase */; };
+		48764AD32A87C237002AD979 /* SupabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764AD22A87C237002AD979 /* SupabaseRepository.swift */; };
+		48764AD52A87C7C8002AD979 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764AD42A87C7C8002AD979 /* Configs.swift */; };
+		48764AD72A87EED6002AD979 /* SupabaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764AD62A87EED6002AD979 /* SupabaseModels.swift */; };
+		48764ADC2A881615002AD979 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764ADB2A881615002AD979 /* LogInView.swift */; };
+		48764ADE2A881623002AD979 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764ADD2A881623002AD979 /* SignUpView.swift */; };
+		48764AE12A88D54B002AD979 /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = 48764AE02A88D54B002AD979 /* AlertKit */; };
+		48764AE32A88E261002AD979 /* AlertKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764AE22A88E261002AD979 /* AlertKitUtils.swift */; };
+		48764AE52A88E918002AD979 /* AlertKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48764AE42A88E918002AD979 /* AlertKitExtension.swift */; };
 		4879EAA72A7442C100E5429F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAA62A7442C100E5429F /* PrimaryButton.swift */; };
 		4879EAAB2A7534DD00E5429F /* AddFlowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAAA2A7534DD00E5429F /* AddFlowModalView.swift */; };
-		4879EAAE2A7586C200E5429F /* ModalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAAD2A7586C200E5429F /* ModalExtension.swift */; };
+		4879EAAE2A7586C200E5429F /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879EAAD2A7586C200E5429F /* ViewExtension.swift */; };
 		4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889DE7D2A6B115D0027C43E /* PaylogApp.swift */; };
 		4889DE822A6B115F0027C43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE812A6B115F0027C43E /* Assets.xcassets */; };
 		4889DE852A6B115F0027C43E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4889DE842A6B115F0027C43E /* Preview Assets.xcassets */; };
@@ -79,11 +90,19 @@
 		4833D6A62A6D9AC700BB8BE5 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 		4833D6A82A6D9C4300BB8BE5 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		4833D6AA2A6DD4FF00BB8BE5 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		484D5EDB2A912FF200F57151 /* EntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityToModelMapper.swift; sourceTree = "<group>"; };
 		4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlansView.swift; sourceTree = "<group>"; };
 		48764AC92A87BD05002AD979 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		48764AD22A87C237002AD979 /* SupabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseRepository.swift; sourceTree = "<group>"; };
+		48764AD42A87C7C8002AD979 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		48764AD62A87EED6002AD979 /* SupabaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseModels.swift; sourceTree = "<group>"; };
+		48764ADB2A881615002AD979 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		48764ADD2A881623002AD979 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		48764AE22A88E261002AD979 /* AlertKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKitUtils.swift; sourceTree = "<group>"; };
+		48764AE42A88E918002AD979 /* AlertKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKitExtension.swift; sourceTree = "<group>"; };
 		4879EAA62A7442C100E5429F /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4879EAAA2A7534DD00E5429F /* AddFlowModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlowModalView.swift; sourceTree = "<group>"; };
-		4879EAAD2A7586C200E5429F /* ModalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalExtension.swift; sourceTree = "<group>"; };
+		4879EAAD2A7586C200E5429F /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		4889DE7A2A6B115D0027C43E /* Paylog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4889DE7D2A6B115D0027C43E /* PaylogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylogApp.swift; sourceTree = "<group>"; };
 		4889DE812A6B115F0027C43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +146,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48764ACF2A87C15A002AD979 /* Supabase in Frameworks */,
+				48764ACC2A87BFBD002AD979 /* SwipeActions in Frameworks */,
+				48764AE12A88D54B002AD979 /* AlertKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,10 +169,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484D5EDA2A912FD900F57151 /* mappers */ = {
+			isa = PBXGroup;
+			children = (
+				484D5EDB2A912FF200F57151 /* EntityToModelMapper.swift */,
+			);
+			name = mappers;
+			sourceTree = "<group>";
+		};
+		48764AD02A87C206002AD979 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				48764AD22A87C237002AD979 /* SupabaseRepository.swift */,
+				48764AD42A87C7C8002AD979 /* Configs.swift */,
+				48764AD62A87EED6002AD979 /* SupabaseModels.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 		4879EAAC2A7586A000E5429F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4879EAAD2A7586C200E5429F /* ModalExtension.swift */,
+				4879EAAD2A7586C200E5429F /* ViewExtension.swift */,
+				48764AE42A88E918002AD979 /* AlertKitExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -179,6 +220,8 @@
 		4889DE7C2A6B115D0027C43E /* Paylog */ = {
 			isa = PBXGroup;
 			children = (
+				484D5EDA2A912FD900F57151 /* mappers */,
+				48764AD02A87C206002AD979 /* repository */,
 				48B1930E2A7D8B1700722D56 /* utils */,
 				4879EAAC2A7586A000E5429F /* extensions */,
 				48F1FE2C2A6BDBB900A0CC38 /* Info.plist */,
@@ -233,6 +276,8 @@
 				4852A4C22A706A0000A49C8F /* EmptyPlansView.swift */,
 				48B1930A2A7D626300722D56 /* AddNewFlowToPlanView.swift */,
 				48B1930C2A7D687C00722D56 /* AddPlanView.swift */,
+				48764ADB2A881615002AD979 /* LogInView.swift */,
+				48764ADD2A881623002AD979 /* SignUpView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -280,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				48B1930F2A7EB5F500722D56 /* FlowUtils.swift */,
+				48764AE22A88E261002AD979 /* AlertKitUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -354,6 +400,11 @@
 			dependencies = (
 			);
 			name = Paylog;
+			packageProductDependencies = (
+				48764ACB2A87BFBD002AD979 /* SwipeActions */,
+				48764ACE2A87C15A002AD979 /* Supabase */,
+				48764AE02A88D54B002AD979 /* AlertKit */,
+			);
 			productName = Paylog;
 			productReference = 4889DE7A2A6B115D0027C43E /* Paylog.app */;
 			productType = "com.apple.product-type.application";
@@ -426,6 +477,11 @@
 				Base,
 			);
 			mainGroup = 4889DE712A6B115D0027C43E;
+			packageReferences = (
+				48764ACA2A87BFBD002AD979 /* XCRemoteSwiftPackageReference "SwipeActions" */,
+				48764ACD2A87C15A002AD979 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				48764ADF2A88D54B002AD979 /* XCRemoteSwiftPackageReference "AlertKit" */,
+			);
 			productRefGroup = 4889DE7B2A6B115D0027C43E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,32 +537,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48764ADC2A881615002AD979 /* LogInView.swift in Sources */,
 				4852A4C32A706A0000A49C8F /* EmptyPlansView.swift in Sources */,
 				4833D6A32A6D27E600BB8BE5 /* ViewConstants.swift in Sources */,
 				48F1FE3B2A6BF13800A0CC38 /* RoundButton.swift in Sources */,
+				48764AD32A87C237002AD979 /* SupabaseRepository.swift in Sources */,
 				48F1FE0F2A6BD6B100A0CC38 /* MainView.swift in Sources */,
 				48F1FE2E2A6BDF3B00A0CC38 /* Plan.swift in Sources */,
 				4833D6AB2A6DD4FF00BB8BE5 /* PlanView.swift in Sources */,
 				4833D6A92A6D9C4300BB8BE5 /* SettingsStore.swift in Sources */,
 				4889DEB02A6B18E30027C43E /* OnBoardingView.swift in Sources */,
+				48764AD72A87EED6002AD979 /* SupabaseModels.swift in Sources */,
 				4833D6A72A6D9AC700BB8BE5 /* ProfileStore.swift in Sources */,
 				48B1930B2A7D626300722D56 /* AddNewFlowToPlanView.swift in Sources */,
 				4833D6A52A6D283600BB8BE5 /* DataConstants.swift in Sources */,
 				48F1FE302A6BDF9200A0CC38 /* Flow.swift in Sources */,
+				48764AD52A87C7C8002AD979 /* Configs.swift in Sources */,
+				48764ADE2A881623002AD979 /* SignUpView.swift in Sources */,
 				4889DE7E2A6B115D0027C43E /* PaylogApp.swift in Sources */,
 				489FC1202A6F1F3300462072 /* EditFlowRowView.swift in Sources */,
 				4833D69D2A6C2B0700BB8BE5 /* PlanStore.swift in Sources */,
 				48F1FE382A6BEA1600A0CC38 /* PlanCardView.swift in Sources */,
-				4879EAAE2A7586C200E5429F /* ModalExtension.swift in Sources */,
+				4879EAAE2A7586C200E5429F /* ViewExtension.swift in Sources */,
 				4889DEAC2A6B154E0027C43E /* Constants.swift in Sources */,
 				48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */,
 				48F1FE332A6BE00E00A0CC38 /* UserProfile.swift in Sources */,
 				4879EAA72A7442C100E5429F /* PrimaryButton.swift in Sources */,
+				484D5EDC2A912FF200F57151 /* EntityToModelMapper.swift in Sources */,
+				48764AE52A88E918002AD979 /* AlertKitExtension.swift in Sources */,
 				4833D6A12A6CA2A500BB8BE5 /* ProfileView.swift in Sources */,
 				4833D69F2A6C9FAD00BB8BE5 /* SettingsView.swift in Sources */,
 				4879EAAB2A7534DD00E5429F /* AddFlowModalView.swift in Sources */,
 				48B1930D2A7D687C00722D56 /* AddPlanView.swift in Sources */,
 				48B193102A7EB5F500722D56 /* FlowUtils.swift in Sources */,
+				48764AE32A88E261002AD979 /* AlertKitUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +901,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48764ACA2A87BFBD002AD979 /* XCRemoteSwiftPackageReference "SwipeActions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/SwipeActions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		48764ACD2A87C15A002AD979 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		48764ADF2A88D54B002AD979 /* XCRemoteSwiftPackageReference "AlertKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparrowcode/AlertKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48764ACB2A87BFBD002AD979 /* SwipeActions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48764ACA2A87BFBD002AD979 /* XCRemoteSwiftPackageReference "SwipeActions" */;
+			productName = SwipeActions;
+		};
+		48764ACE2A87C15A002AD979 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48764ACD2A87C15A002AD979 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		48764AE02A88D54B002AD979 /* AlertKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48764ADF2A88D54B002AD979 /* XCRemoteSwiftPackageReference "AlertKit" */;
+			productName = AlertKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4889DE722A6B115D0027C43E /* Project object */;
 }

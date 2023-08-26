@@ -22,10 +22,21 @@ func getPricePrefix(flow: Flow, defaultCurrency: String) -> String {
     let currency = currencies[defaultCurrency] ?? "$"
     switch flow.type {
     case .expense:
-        return "\(currency) -"
+        return "- \(currency)"
     case .income:
-        return "\(currency) +"
+        return "+ \(currency)"
     case .normal:
         return "\(currency)"
     }
+}
+
+func getNumberFormatter(defaultCurrency: String) -> NumberFormatter {
+    let currency = currencies[defaultCurrency] ?? "$"
+    let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = currency
+        return formatter
+    }()
+    return numberFormatter
 }

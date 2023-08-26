@@ -7,8 +7,12 @@
 
 import Foundation
 
-
-struct UserProfile {
+struct UserProfile: Codable {
+    var userId: UUID
     var fullname: String
-    var email: String
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+        case fullname = "full_name"
+    }
 }

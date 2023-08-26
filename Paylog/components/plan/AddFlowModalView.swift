@@ -11,6 +11,7 @@ import SwiftUI
 struct AddFlowModalView: View {
     @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @EnvironmentObject var planStore: PlanStore
+    @EnvironmentObject var repository: SupabaseRepository
 
     @State private var flowToAdd: Flow = .init(title: "", price: 0, isChecked: false)
     @State private var modalPosition: CGSize = .zero
@@ -26,6 +27,13 @@ struct AddFlowModalView: View {
 
     func resetFlowToAdd() {
         flowToAdd = .init(title: "", price: 0, isChecked: false)
+        focusedField.wrappedValue = nil
+    }
+
+    func addNewFlow() {
+        plan.flows.append(Flow(title: flowToAdd.title, price: flowToAdd.price, isChecked: flowToAdd.isChecked, type: flowToAdd.type))
+        notificationHaptics.notificationOccurred(.success)
+        toggleIsModalPresented()
     }
 
     var body: some View {
@@ -33,29 +41,19 @@ struct AddFlowModalView: View {
             HStack {
                 RoundButton(image: "xmark.circle.fill", action: toggleIsModalPresented)
                 Spacer()
-                Button("Done") {
-                    plan.flows.append(Flow(title: flowToAdd.title, price: flowToAdd.price, isChecked: flowToAdd.isChecked, type: flowToAdd.type))
-                    notificationHaptics.notificationOccurred(.success)
-                    toggleIsModalPresented()
-                }
-                .disabled(flowToAdd.title == "")
+                Button("Done") { addNewFlow() }
+                    .disabled(flowToAdd.title == "")
             }
 
             VStack {
                 TextField("Title", text: $flowToAdd.title)
-                    .font(.title2)
+                    .font(.title3)
                     .focused(self.focusedField, equals: .modalTitle)
-                HStack {
-                    Text(currencies[defaultCurrency]!)
-                    TextField("Price", value: $flowToAdd.price, formatter: NumberFormatter())
-                        .font(.callout)
-                        .keyboardType(.numberPad)
-                        .onSubmit {
-                            self.focusedField.wrappedValue = .modalPrice
-                        }
-                        .focused(self.focusedField, equals: .modalPrice)
-                }
-                .foregroundColor(.secondary)
+                TextField("Price", value: $flowToAdd.price, formatter: getNumberFormatter(defaultCurrency: defaultCurrency))
+                    .keyboardType(.numberPad)
+                    .focused(self.focusedField, equals: .modalPrice)
+                    .foregroundColor(.secondary)
+                    .onSubmit { self.focusedField.wrappedValue = .modalPrice }
                 Picker(selection: $flowToAdd.type, label: Text("type")) {
                     Text("Expense").tag(FlowType.expense)
                     Text("Normal").tag(FlowType.normal)
@@ -66,9 +64,9 @@ struct AddFlowModalView: View {
         }
         .padding(20)
         .background(.thinMaterial)
-        .cornerRadius(5)
+        .cornerRadius(20)
         .offset(x: 0, y: modalPosition.height)
-        .offset(x: 0, y: isFlowModalPresented ? screen.height / 100 : screen.height)
+        .offset(x: 0, y: isFlowModalPresented ? screen.height / 120 : screen.height)
         .opacity(isFlowModalPresented ? 1 : 0)
         .gesture(
             DragGesture()
@@ -89,5 +87,6 @@ struct AddEditFlowView_Previews: PreviewProvider {
     static var previews: some View {
         AddFlowModalView(plan: .constant(previewDummyPlan), isFlowModalPresented: .constant(true), focusedField: FocusState<PlanViewTextFields?>().projectedValue)
             .environmentObject(PlanStore())
+            .environmentObject(SupabaseRepository.getInstance(supabaseClient))
     }
 }
