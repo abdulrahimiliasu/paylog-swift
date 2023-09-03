@@ -13,6 +13,8 @@ enum AppIcon: String, CaseIterable, Identifiable {
     var id: String { return rawValue }
     case primary = "AppIcon"
     case dark = "AppIconDark"
+    case simple = "AppIconSimple"
+    case simpleDark = "AppIconSimpleDark"
 }
 
 class SettingsStore: ObservableObject {

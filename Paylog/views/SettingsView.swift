@@ -9,15 +9,14 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
-    @AppStorage("defaultAppIcon") var preferredAppIcon: String = SettingDefaults.appIcon
+    @AppStorage("defaultAppIcon") var preferredAppIcon: AppIcon = SettingDefaults.appIcon
 
     @EnvironmentObject var settings: SettingsStore
     @EnvironmentObject var profile: ProfileStore
 
-    func setAppIcon(to appIcon: String) {
+    func setAppIcon(to appIcon: AppIcon) {
         preferredAppIcon = appIcon
-        let selectedIcon: AppIcon = appIcon == appIcons.light ? .primary : .dark
-        settings.updateAppIcon(to: selectedIcon)
+        settings.updateAppIcon(to: appIcon)
     }
 
     func setCurrency(to currency: String) { defaultCurrency = currency }
@@ -39,8 +38,10 @@ struct SettingsView: View {
                 }
                 Section("App Icon") {
                     Picker(selection: $preferredAppIcon, label: Text("Icon")) {
-                        Text(appIcons.light).tag(appIcons.light)
-                        Text(appIcons.dark).tag(appIcons.dark)
+                        Text("Default").tag(AppIcon.primary)
+                        Text("Dark").tag(AppIcon.dark)
+                        Text("Simple").tag(AppIcon.simple)
+                        Text("Simple Dark").tag(AppIcon.simpleDark)
                     }
                     .pickerStyle(.navigationLink)
                     .onChange(of: preferredAppIcon, perform: { selectedAppIcon in
@@ -73,8 +74,7 @@ struct GoToProfileView: View {
                 }
                 .padding(5)
             }
-        }
-        else {
+        } else {
             Button { self.isAuthenticateUser = true } label: { Label("Sign in or create account", systemImage: "person.crop.circle") }
                 .fullScreenCover(isPresented: $isAuthenticateUser) { LogInView(isPresented: $isAuthenticateUser) }
         }

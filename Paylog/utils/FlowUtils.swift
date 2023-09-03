@@ -18,8 +18,12 @@ func getPriceForeGroundColor(_ flow: Flow) -> Color {
     }
 }
 
+func getCurrencySymbol(_ currency: String) -> String {
+    return currencies[currency] ?? currency
+}
+
 func getPricePrefix(flow: Flow, defaultCurrency: String) -> String {
-    let currency = currencies[defaultCurrency] ?? "$"
+    let currency = getCurrencySymbol(defaultCurrency)
     switch flow.type {
     case .expense:
         return "- \(currency)"
@@ -31,11 +35,10 @@ func getPricePrefix(flow: Flow, defaultCurrency: String) -> String {
 }
 
 func getNumberFormatter(defaultCurrency: String) -> NumberFormatter {
-    let currency = currencies[defaultCurrency] ?? "$"
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.currencySymbol = currency
+        formatter.currencySymbol = getCurrencySymbol(defaultCurrency)
         return formatter
     }()
     return numberFormatter

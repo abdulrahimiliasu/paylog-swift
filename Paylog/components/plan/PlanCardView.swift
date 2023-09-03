@@ -49,7 +49,7 @@ struct PlanCardView: View {
             if isOpen {
                 VStack {
                     HStack {
-                        Text("Total: \(currencies[defaultCurrency] ?? "$") \(planStore.getTotalFlowAmountOf(plan: plan))")
+                        Text("Total: \(getCurrencySymbol(defaultCurrency)) \(planStore.getTotalFlowAmountOf(plan: plan))")
                             .bold()
                             .font(.callout)
                         Spacer()

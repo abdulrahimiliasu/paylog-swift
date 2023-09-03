@@ -17,13 +17,13 @@ struct AddNewFlowToPlanView: View {
     var focusedField: FocusState<PlanViewTextFields?>.Binding
 
     var body: some View {
-        let currency = currencies[defaultCurrency]
+        let currency = getCurrencySymbol(defaultCurrency)
         let totalAmount = withAnimation(springAnimation) {
             planStore.getTotalFlowAmountOf(plan: plan)
         }
 
         return HStack {
-            Text("Total: \(currency ?? "$") \(totalAmount)")
+            Text("Total: \(currency) \(totalAmount)")
                 .bold()
             Spacer()
             RoundButton(image: willAddNewFlow ? "chevron.down.circle.fill" : "plus.circle.fill") {
