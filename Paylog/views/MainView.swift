@@ -58,21 +58,33 @@ struct MainView: View {
                                     PlanCardView(plan: $plan)
                                 }
                             }
+                            .padding(.horizontal)
                         }
                     }
                 }
             }
             .refreshable { await self.refreshPlans() }
-            .padding(.horizontal)
             .sheet(isPresented: self.$isUserOnboarded) { OnBoardingView() }
             .sheet(isPresented: self.$isShowSettingsView) { SettingsView() }
             .sheet(isPresented: self.$isShowAddPlanView) { AddPlanView(isShowAddPlanView: self.$isShowAddPlanView) }
             .navigationTitle("Plans")
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    RoundButton(image: "plus.circle.fill") { self.isShowAddPlanView.toggle() }
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    HStack {
+                        Button { 
+                            self.isShowAddPlanView.toggle()
+                            haptics.impactOccurred(intensity: 0.5)
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                        }
                         .disabled(self.profileStore.user == nil)
-                    RoundButton(image: "gearshape.circle.fill") { self.isShowSettingsView.toggle() }
+                        Button { self.isShowSettingsView.toggle() } label: {
+                            Image(systemName: "gearshape.circle.fill")
+                        }
+                    }
+                    .font(.title3)
+                    .foregroundColor(.accentColor)
+                    .symbolRenderingMode(.hierarchical)
                 }
             }
             .onFirstAppear { Task { await self.loadPlans() } }

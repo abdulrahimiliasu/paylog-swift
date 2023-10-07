@@ -22,7 +22,7 @@ struct PrimaryButton: View {
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.accentColor)
         )
-        .shadow(color: .accentColor.opacity(0.2), radius: 10, x: 0, y: 5)
+        .shadow(color: .accentColor.opacity(0.1), radius: 5, x: 0, y: 5)
     }
 }
 

@@ -37,7 +37,10 @@ struct AddFlowModalView: View {
     }
 
     var body: some View {
-        VStack(spacing: 10) {
+        let currency = planStore.getPlanCurrency(plan)
+        let priceFormatter = getNumberFormatter(defaultCurrency: currency)
+
+        return VStack(spacing: 10) {
             HStack {
                 RoundButton(image: "xmark.circle.fill", action: toggleIsModalPresented)
                 Spacer()
@@ -49,7 +52,7 @@ struct AddFlowModalView: View {
                 TextField("Title", text: $flowToAdd.title)
                     .font(.title3)
                     .focused(self.focusedField, equals: .modalTitle)
-                TextField("Price", value: $flowToAdd.price, formatter: getNumberFormatter(defaultCurrency: defaultCurrency))
+                TextField("Price", value: $flowToAdd.price, formatter: priceFormatter)
                     .keyboardType(.numberPad)
                     .focused(self.focusedField, equals: .modalPrice)
                     .foregroundColor(.secondary)
@@ -63,8 +66,8 @@ struct AddFlowModalView: View {
             }
         }
         .padding(20)
-        .background(.thinMaterial)
-        .cornerRadius(20)
+        .background(Color(AppColors.secondary))
+        .cornerRadius(12)
         .offset(x: 0, y: modalPosition.height)
         .offset(x: 0, y: isFlowModalPresented ? screen.height / 120 : screen.height)
         .opacity(isFlowModalPresented ? 1 : 0)
@@ -80,6 +83,7 @@ struct AddFlowModalView: View {
                 }
                 .onEnded { _ in withAnimation(springAnimation) { self.modalPosition = .zero } }
         )
+        .shadow(color: .black.opacity(0.05), radius: 10, x: 0.0, y: 10)
     }
 }
 

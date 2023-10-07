@@ -32,23 +32,21 @@ struct SettingsView: View {
                         }
                     }
                     .pickerStyle(.navigationLink)
-                    .onChange(of: defaultCurrency, perform: { newCurrency in
-                        setCurrency(to: newCurrency)
-                    })
+                    .onChange(of: defaultCurrency) {
+                        setCurrency(to: defaultCurrency)
+                    }
                 }
-                Section("App Icon") {
-                    Picker(selection: $preferredAppIcon, label: Text("Icon")) {
-                        Text("Default").tag(AppIcon.primary)
-                        Text("Dark").tag(AppIcon.dark)
-                        Text("Simple").tag(AppIcon.simple)
-                        Text("Simple Dark").tag(AppIcon.simpleDark)
+                Section("App Settings") {
+                    Picker(selection: $preferredAppIcon, label: Text("App Icon")) {
+                        Text("White").tag(AppIcon.simple)
+                        Text("Dark").tag(AppIcon.simpleDark)
                     }
                     .pickerStyle(.navigationLink)
-                    .onChange(of: preferredAppIcon, perform: { selectedAppIcon in
-                        setAppIcon(to: selectedAppIcon)
-                    })
+                    .onChange(of: preferredAppIcon) {
+                        setAppIcon(to: preferredAppIcon)
+                    }
+                    LabeledContent("App version", value: "1.0.0 (Beta)")
                 }
-                LabeledContent("App version", value: "1.0.0 (Beta)")
             }
             .navigationTitle("Settings")
         }

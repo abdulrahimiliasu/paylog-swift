@@ -15,6 +15,7 @@ enum LogInViewTextFields {
 struct LogInView: View {
     @FocusState private var currentTextFieldFocus: LogInViewTextFields?
     @EnvironmentObject var profileStore: ProfileStore
+    @EnvironmentObject var planStore: PlanStore
     @EnvironmentObject var supabaseRepository: SupabaseRepository
 
     @Binding var isPresented: Bool
@@ -27,6 +28,13 @@ struct LogInView: View {
             let user = try await supabaseRepository.signInUser(email: email, password: password)
             await profileStore.setUser(to: user)
             isPresented.toggle()
+            do {
+                let userPlans = try await supabaseRepository.getUserPlans(userId: user.id)
+                self.planStore.plans = userPlans
+            } catch {
+                AlertKitAPI.showError(title: "Could not load user plans, \(error.localizedDescription)")
+            }
+
             AlertKitAPI.present(title: "Sign In Successfull", icon: .done, style: .iOS17AppleMusic, haptic: .success)
         }
     }

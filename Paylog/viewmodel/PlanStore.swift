@@ -7,12 +7,14 @@
 
 import Combine
 import Foundation
+import SwiftUI
 
 @MainActor
 class PlanStore: ObservableObject {
+    @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @Published var plans: [Plan] = .init()
+    
     let repository: SupabaseRepository
-
     init() { self.repository = SupabaseRepository.getInstance(supabaseClient) }
 
     func getTotalFlowAmountOf(plan: Plan) -> Int {
@@ -33,5 +35,10 @@ class PlanStore: ObservableObject {
 
     func deletePlan(index: Int) {
         plans.remove(at: index)
+    }
+
+    func getPlanCurrency(_ plan: Plan) -> String {
+        guard let currency = plan.currency else { return getCurrencySymbol(defaultCurrency) }
+        return getCurrencySymbol(currency)
     }
 }

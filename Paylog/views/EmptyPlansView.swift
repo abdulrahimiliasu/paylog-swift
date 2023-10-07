@@ -9,26 +9,19 @@ import SwiftUI
 
 struct EmptyPlansView: View {
     var body: some View {
-        VStack(spacing: 15) {
-            Image(systemName: "list.bullet.rectangle.portrait.fill")
-                .font(.largeTitle)
+        ContentUnavailableView(label: {
+            Label("No Plans", systemImage: "list.bullet.rectangle.portrait.fill")
                 .symbolRenderingMode(.hierarchical)
-                .foregroundColor(.secondary)
-            VStack {
-                Text("Plans")
+        }, description: {
+            HStack(alignment: .lastTextBaseline) {
+                Text("To add a new plan click on")
+                Image(systemName: "plus.circle.fill")
                     .font(.headline)
-                HStack(alignment: .lastTextBaseline) {
-                    Text("To add a new plan click on")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    Image(systemName: "plus.circle.fill")
-                        .font(.headline)
-                        .foregroundColor(.accentColor)
-                        .symbolRenderingMode(.hierarchical)
-                }
+                    .foregroundColor(.accentColor)
+                    .symbolRenderingMode(.hierarchical)
+                    .symbolEffect(.pulse.wholeSymbol)
             }
-        }
-        .padding()
+        })
     }
 }
 

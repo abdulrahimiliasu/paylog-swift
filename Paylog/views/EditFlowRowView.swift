@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct EditFlowRowView: View {
-    @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @EnvironmentObject var planStore: PlanStore
-
-    @Binding var flowToEdit: Flow
     @State private var isEditMode: Bool = false
 
+    @Binding var flowToEdit: Flow
+    let currency: String
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("\(flowToEdit.title)")
-            Text("\(getPricePrefix(flow: flowToEdit, defaultCurrency: defaultCurrency)) \(flowToEdit.price)")
+            Text("\(getPricePrefix(flow: flowToEdit, defaultCurrency: currency)) \(flowToEdit.price)")
                 .keyboardType(.numberPad)
                 .foregroundColor(getPriceForeGroundColor(flowToEdit))
                 .font(.subheadline)
@@ -26,7 +26,7 @@ struct EditFlowRowView: View {
         .strikethrough(flowToEdit.isChecked)
         .foregroundColor(flowToEdit.isChecked ? .gray : .primary)
         .contentShape(Rectangle())
-        .swipeActions(edge: .leading) {
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button {
                 flowToEdit.isChecked.toggle()
             } label: {
@@ -39,7 +39,7 @@ struct EditFlowRowView: View {
 
 struct FlowView_Previews: PreviewProvider {
     static var previews: some View {
-        EditFlowRowView(flowToEdit: .constant(Flow(title: "Expense", price: 1000, isChecked: false)))
+        EditFlowRowView(flowToEdit: .constant(Flow(title: "Expense", price: 1000, isChecked: false)), currency: "$")
             .environmentObject(PlanStore())
     }
 }

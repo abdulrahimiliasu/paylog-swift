@@ -8,15 +8,14 @@
 import Foundation
 import SwiftUI
 
-
-
-struct AppColors {
+enum AppColors {
     public static let white = "BgWhite"
     public static let grey = "BgGrey"
     public static let black = "BgBlack"
+    public static let secondary = "BgSecondary"
 }
 
-struct AppImages {
+enum AppImages {
     public static let backgroundImage = "BgImage"
     public static let logo = "Logo"
 }

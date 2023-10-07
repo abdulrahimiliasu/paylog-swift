@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var profile: ProfileStore
+    @EnvironmentObject var planStore: PlanStore
     @EnvironmentObject var supabaseRepository: SupabaseRepository
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -32,6 +33,7 @@ struct ProfileView: View {
             await supabaseRepository.signOutUser()
             profile.resetUser()
             presentationMode.wrappedValue.dismiss()
+            planStore.plans = []
             AlertKitAPI.showSuccess(title: "Signed Out Successfully")
         }
     }

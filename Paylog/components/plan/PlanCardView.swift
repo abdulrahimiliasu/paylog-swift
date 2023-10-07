@@ -13,8 +13,9 @@ struct PlanCardView: View {
     @EnvironmentObject var planStore: PlanStore
     @EnvironmentObject var supabaseRepository: SupabaseRepository
 
-    @State private var isOpen: Bool = false
     @Binding var plan: Plan
+    @State private var isOpen: Bool = false
+    @State private var isConfirmDeletion: Bool = false
 
     func onDelete() async {
         await withAlert("Deleting plan") {
@@ -25,7 +26,10 @@ struct PlanCardView: View {
         }
     }
 
-    func expandCard() { withAnimation(springAnimation) { isOpen.toggle() }}
+    func expandCard() { withAnimation(springAnimation) { 
+        isOpen.toggle()
+        haptics.impactOccurred(intensity: 0.5)
+    }}
 
     var body: some View {
         VStack(spacing: 25) {
@@ -40,21 +44,23 @@ struct PlanCardView: View {
                     }
                 }
                 Spacer()
-                RoundButton(image: "chevron.up") { expandCard() }
-                    .rotationEffect(isOpen ? .zero : .degrees(180))
+                Button { expandCard() } label: { Text("Details").font(.caption) }
             }
             .contentShape(Rectangle())
             .onTapGesture { expandCard() }
 
             if isOpen {
+                let planCurrency = planStore.getPlanCurrency(plan)
+                let totalFlowAmount = planStore.getTotalFlowAmountOf(plan: plan)
                 VStack {
-                    HStack {
-                        Text("Total: \(getCurrencySymbol(defaultCurrency)) \(planStore.getTotalFlowAmountOf(plan: plan))")
+                    HStack(spacing: 0) {
+                        Text("Total: \(planCurrency) \(totalFlowAmount)")
+                            .contentTransition(.numericText(value: Double(totalFlowAmount)))
                             .bold()
                             .font(.callout)
                         Spacer()
                         RoundButton(image: "trash.circle.fill", font: .title, foregroundColor: .red, symbolRenderingMode: .monochrome) {
-                            Task { await self.onDelete() }
+                            isConfirmDeletion.toggle()
                         }
                         NavigationLink {
                             EditPlanView(plan: plan)
@@ -68,25 +74,25 @@ struct PlanCardView: View {
                     ScrollView {
                         LazyVStack(spacing: 10) {
                             ForEach($plan.flows) { $flow in
-                                FlowCardView(flow: $flow, planId: plan.id)
+                                FlowCardView(flow: $flow, plan: plan)
                             }
                         }
                     }
                     .frame(maxHeight: 500)
                 }
+                .alert("Delete plan", isPresented: $isConfirmDeletion, actions: {
+                    Button("Cancel", role: .cancel) {}
+                    Button("Delete", role: .destructive) { Task { await self.onDelete() }}
+                }, message: { Text("Are you sure you want to continue ?") })
             }
         }
         .padding(20)
         .scaleEffect(isOpen ? 1.01 : 1)
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .stroke(Color.primary.opacity(0.2), lineWidth: isOpen ? 0 : 1)
                 .fill(Color(AppColors.grey))
         )
-        .contextMenu {
-            Button(role: .destructive) {
-                Task { await self.onDelete() }
-            } label: { Label("Delete", systemImage: "trash") }
-        }
     }
 }
 

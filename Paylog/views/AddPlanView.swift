@@ -14,11 +14,9 @@ struct AddPlanView: View {
     @EnvironmentObject var repository: SupabaseRepository
 
     @Binding var isShowAddPlanView: Bool
-
     @State var planToAdd: Plan = .init(title: "", description: "", flows: [])
 
     func dismissModal() { self.isShowAddPlanView = false }
-
     func addNewPlan() async {
         await withAlert("Adding new plan") {
             guard let user = self.profileStore.user else { return }

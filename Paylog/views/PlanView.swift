@@ -26,7 +26,8 @@ struct PlanView: View {
     }
 
     var body: some View {
-        GeometryReader { _ in
+        let planCurrency = planStore.getPlanCurrency(plan)
+        return
             Form {
                 Section("Plan Details") {
                     TextField("Title", text: $plan.title)
@@ -41,9 +42,21 @@ struct PlanView: View {
                         .multilineTextAlignment(.leading)
                         .focused($currentTextFieldFocus, equals: .description)
                 }
+                Section {
+                    Picker(selection: $plan.currency, label: Text("Currency")) {
+                        Text("Default").tag(nil as String?)
+                        ForEach(currencyKeys, id: \.self) { key in
+                            Text(key).tag(key as String?)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .onChange(of: plan.currency) { _, newVal in
+                        plan.currency = newVal
+                    }
+                }
                 List {
                     ForEach($plan.flows) { $flow in
-                        EditFlowRowView(flowToEdit: $flow)
+                        EditFlowRowView(flowToEdit: $flow, currency: planCurrency)
                     }
                     .onDelete { indexSet in
                         let flowToRemove = plan.flows.remove(at: indexSet.first!)
@@ -58,16 +71,16 @@ struct PlanView: View {
                     isFlowModalPresented.toggle()
                 }
             }
-        }
-        .safeAreaInset(edge: .bottom, content: {
-            AddNewFlowToPlanView(plan: $plan, willAddNewFlow: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
-                .padding()
-                .background(.thinMaterial)
-        })
-        .overlay {
-            AddFlowModalView(plan: $plan, isFlowModalPresented: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
-                .padding(5)
-        }
+            .safeAreaInset(edge: .bottom, content: {
+                AddNewFlowToPlanView(plan: $plan, willAddNewFlow: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
+                    .padding()
+                    .background(Color(AppColors.secondary))
+             
+            })
+            .overlay {
+                AddFlowModalView(plan: $plan, isFlowModalPresented: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
+                    .padding(5)
+            }
     }
 }
 

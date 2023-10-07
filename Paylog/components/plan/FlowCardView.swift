@@ -10,27 +10,29 @@ import SwiftUI
 
 struct FlowCardView: View {
     @Binding var flow: Flow
-    let planId: UUID
+    let plan: Plan
 
     @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @EnvironmentObject var supabaseRepository: SupabaseRepository
+    @EnvironmentObject var planStore: PlanStore
 
     func didCheck() async {
         do {
-            withAnimation(.linear(duration: 0.1)) { flow.isChecked.toggle() }
-            try await supabaseRepository.updateFlow(planId: planId, flow: flow)
             haptics.impactOccurred()
+            withAnimation(.linear(duration: 0.1)) { flow.isChecked.toggle() }
+            try await supabaseRepository.updateFlow(planId: plan.id, flow: flow)
         } catch { AlertKitAPI.showError(title: "Couldn't update status, a problem occured!") }
     }
 
     var body: some View {
         HStack {
             Image(systemName: flow.isChecked ? "checkmark.circle.fill" : "circle")
+                .font(.title3)
             HStack {
                 Text(flow.title)
                 Spacer()
                 if flow.price != 0 {
-                    Text("\(getPricePrefix(flow: flow, defaultCurrency: defaultCurrency)) \(flow.price)")
+                    Text("\(planStore.getPlanCurrency(plan)) \(flow.price)")
                         .foregroundColor(flow.isChecked ? .primary : getPriceForeGroundColor(flow))
                 }
             }
@@ -45,7 +47,8 @@ struct FlowCardView: View {
 
 struct FlowCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FlowCardView(flow: .constant(Flow(title: "Bus Ticket", price: -3000, isChecked: true, tag: "")), planId: UUID())
+        FlowCardView(flow: .constant(Flow(title: "Bus Ticket", price: -3000, isChecked: true, tag: "")), plan: previewDummyPlan)
             .environmentObject(SupabaseRepository.getInstance(supabaseClient))
+            .environmentObject(PlanStore())
     }
 }
