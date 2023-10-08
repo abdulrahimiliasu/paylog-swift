@@ -28,7 +28,7 @@ struct PlanCardView: View {
 
     func expandCard() { withAnimation(springAnimation) { 
         isOpen.toggle()
-        haptics.impactOccurred(intensity: 0.5)
+        HapticsManager.impact(.light)
     }}
 
     var body: some View {
@@ -112,7 +112,7 @@ struct EditPlanView: View {
             try await supabaseRepository.updateFlows(planId: planToEdit.id, flows: planToEdit.flows)
             planStore.updatePlanTo(planToEdit)
         }
-        notificationHaptics.notificationOccurred(.success)
+        HapticsManager.success()
         presentationMode.wrappedValue.dismiss()
     }
 

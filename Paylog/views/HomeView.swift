@@ -74,7 +74,7 @@ struct HomeView: View {
                     HStack {
                         Button {
                             self.isShowAddPlanView.toggle()
-                            haptics.impactOccurred(intensity: 0.5)
+                            HapticsManager.impact(.rigid)
                         } label: {
                             Image(systemName: "plus.circle.fill")
                         }

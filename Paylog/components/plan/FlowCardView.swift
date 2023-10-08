@@ -18,7 +18,7 @@ struct FlowCardView: View {
 
     func didCheck() async {
         do {
-            haptics.impactOccurred()
+            HapticsManager.impact(.rigid)
             withAnimation(.linear(duration: 0.1)) { flow.isChecked.toggle() }
             try await supabaseRepository.updateFlow(planId: plan.id, flow: flow)
         } catch { AlertKitAPI.showError(title: "Couldn't update status, a problem occured!") }

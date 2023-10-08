@@ -23,7 +23,7 @@ struct AddPlanView: View {
 
             let plan = try await self.repository.addPlan(userId: user.id, plan: self.planToAdd)
             self.planStore.plans.append(plan)
-            notificationHaptics.notificationOccurred(.success)
+            HapticsManager.success()
             return self.dismissModal()
         }
     }

@@ -32,7 +32,7 @@ struct AddFlowModalView: View {
 
     func addNewFlow() {
         plan.flows.append(Flow(title: flowToAdd.title, price: flowToAdd.price, isChecked: flowToAdd.isChecked, type: flowToAdd.type))
-        notificationHaptics.notificationOccurred(.success)
+        HapticsManager.success()
         toggleIsModalPresented()
     }
 

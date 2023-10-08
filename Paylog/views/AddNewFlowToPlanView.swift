@@ -30,7 +30,7 @@ struct AddNewFlowToPlanView: View {
                 self.focusedField.wrappedValue = .modalTitle
                 withAnimation(springAnimation) { 
                     willAddNewFlow.toggle()
-                    haptics.impactOccurred(intensity: 0.5)
+                    HapticsManager.impact(.soft)
                 }
             }
         }
