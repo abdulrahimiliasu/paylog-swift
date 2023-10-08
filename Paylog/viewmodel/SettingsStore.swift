@@ -7,14 +7,13 @@
 
 import Combine
 import Foundation
+import LocalAuthentication
 import UIKit
 
 enum AppIcon: String, CaseIterable, Identifiable {
     var id: String { return rawValue }
     case primary = "AppIcon"
     case dark = "AppIconDark"
-    case simple = "AppIconSimple"
-    case simpleDark = "AppIconSimpleDark"
 }
 
 class SettingsStore: ObservableObject {
@@ -38,6 +37,17 @@ class SettingsStore: ObservableObject {
             } catch {
                 self.appIcon = .primary
             }
+        }
+    }
+
+    func authenticateDeviceOwner(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        let context = LAContext()
+        var error: NSError?
+
+        guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else { return onError() }
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Paylog needs to authenticate user to continue") { success, _ in
+            guard success else { return onError() }
+            return onSuccess()
         }
     }
 }

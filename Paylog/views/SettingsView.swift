@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("defaultCurrency") var defaultCurrency: String = SettingDefaults.currency
     @AppStorage("defaultAppIcon") var preferredAppIcon: AppIcon = SettingDefaults.appIcon
+    @AppStorage("isAuthenticationEnabled") private var isAuthenticationEnabled: Bool = false
 
     @EnvironmentObject var settings: SettingsStore
     @EnvironmentObject var profile: ProfileStore
@@ -36,10 +37,17 @@ struct SettingsView: View {
                         setCurrency(to: defaultCurrency)
                     }
                 }
+
+                Section {
+                    Toggle("Require Authentication", isOn: $isAuthenticationEnabled)
+                } footer: {
+                    Text("When enabled, you'll need Face ID, Touch ID or Passcode authentication to access the app all the time.")
+                }
+
                 Section("App Settings") {
                     Picker(selection: $preferredAppIcon, label: Text("App Icon")) {
-                        Text("White").tag(AppIcon.simple)
-                        Text("Dark").tag(AppIcon.simpleDark)
+                        Text("White").tag(AppIcon.primary)
+                        Text("Dark").tag(AppIcon.dark)
                     }
                     .pickerStyle(.navigationLink)
                     .onChange(of: preferredAppIcon) {

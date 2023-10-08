@@ -62,6 +62,8 @@
 		48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE352A6BE31B00A0CC38 /* FlowCardView.swift */; };
 		48F1FE382A6BEA1600A0CC38 /* PlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE372A6BEA1600A0CC38 /* PlanCardView.swift */; };
 		48F1FE3B2A6BF13800A0CC38 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */; };
+		48F9DC9B2AD1C13F0088674A /* AuthenticatationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9DC9A2AD1C13F0088674A /* AuthenticatationView.swift */; };
+		48F9DC9D2AD1C7090088674A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9DC9C2AD1C7090088674A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		48F1FE352A6BE31B00A0CC38 /* FlowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCardView.swift; sourceTree = "<group>"; };
 		48F1FE372A6BEA1600A0CC38 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		48F9DC9A2AD1C13F0088674A /* AuthenticatationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatationView.swift; sourceTree = "<group>"; };
+		48F9DC9C2AD1C7090088674A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,8 @@
 				48B1930C2A7D687C00722D56 /* AddPlanView.swift */,
 				48764ADB2A881615002AD979 /* LogInView.swift */,
 				48764ADD2A881623002AD979 /* SignUpView.swift */,
+				48F9DC9A2AD1C13F0088674A /* AuthenticatationView.swift */,
+				48F9DC9C2AD1C7090088674A /* HomeView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -453,7 +459,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4889DE792A6B115D0027C43E = {
 						CreatedOnToolsVersion = 14.3;
@@ -546,6 +552,7 @@
 				48F1FE2E2A6BDF3B00A0CC38 /* Plan.swift in Sources */,
 				4833D6AB2A6DD4FF00BB8BE5 /* PlanView.swift in Sources */,
 				4833D6A92A6D9C4300BB8BE5 /* SettingsStore.swift in Sources */,
+				48F9DC9D2AD1C7090088674A /* HomeView.swift in Sources */,
 				4889DEB02A6B18E30027C43E /* OnBoardingView.swift in Sources */,
 				48764AD72A87EED6002AD979 /* SupabaseModels.swift in Sources */,
 				4833D6A72A6D9AC700BB8BE5 /* ProfileStore.swift in Sources */,
@@ -563,6 +570,7 @@
 				48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */,
 				48F1FE332A6BE00E00A0CC38 /* UserProfile.swift in Sources */,
 				4879EAA72A7442C100E5429F /* PrimaryButton.swift in Sources */,
+				48F9DC9B2AD1C13F0088674A /* AuthenticatationView.swift in Sources */,
 				484D5EDC2A912FF200F57151 /* EntityToModelMapper.swift in Sources */,
 				48764AE52A88E918002AD979 /* AlertKitExtension.swift in Sources */,
 				4833D6A12A6CA2A500BB8BE5 /* ProfileView.swift in Sources */,
@@ -643,6 +651,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -657,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -703,6 +712,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -711,7 +721,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -736,6 +746,7 @@
 				INFOPLIST_FILE = Paylog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Paylog;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Paylog wants to access face id to authenticate user";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -770,6 +781,7 @@
 				INFOPLIST_FILE = Paylog/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Paylog;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Paylog wants to access face id to authenticate user";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
