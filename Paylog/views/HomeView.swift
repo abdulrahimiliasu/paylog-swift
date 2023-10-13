@@ -48,6 +48,7 @@ struct HomeView: View {
             VStack {
                 if self.isLoadingPlans {
                     ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     if self.planStore.isPlansEmpty() {
                         EmptyPlansView()
@@ -69,23 +70,24 @@ struct HomeView: View {
             .sheet(isPresented: self.$isShowSettingsView) { SettingsView() }
             .sheet(isPresented: self.$isShowAddPlanView) { AddPlanView(isShowAddPlanView: self.$isShowAddPlanView) }
             .navigationTitle("Plans")
+            .overlay(alignment: .bottomTrailing, content: {
+                FloatingButton {
+                    self.isShowAddPlanView = true
+                    HapticsManager.impact(.medium)
+                }
+                .padding()
+                .disabled(self.profileStore.user == nil)
+            })
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    HStack {
-                        Button {
-                            self.isShowAddPlanView.toggle()
-                            HapticsManager.impact(.rigid)
-                        } label: {
-                            Image(systemName: "plus.circle.fill")
-                        }
-                        .disabled(self.profileStore.user == nil)
+                    Menu("App Menu", systemImage: "ellipsis.circle") {
                         Button { self.isShowSettingsView.toggle() } label: {
-                            Image(systemName: "gearshape.circle.fill")
+                            Label("Settings", systemImage: "gearshape")
+                        }
+                        Button { Task { await self.refreshPlans()} } label: {
+                            Label("Reload", systemImage: "arrow.clockwise")
                         }
                     }
-                    .font(.title3)
-                    .foregroundColor(.accentColor)
-                    .symbolRenderingMode(.hierarchical)
                 }
             }
             .onFirstAppear { Task { await self.loadPlans() } }

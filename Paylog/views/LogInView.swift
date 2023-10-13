@@ -69,6 +69,7 @@ struct LogInView: View {
                     }
                     .padding()
                 }
+                .textInputAutocapitalization(.never)
                 .onAppear { currentTextFieldFocus = .email }
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) { RoundButton(image: "xmark.circle.fill") { isPresented.toggle() } }

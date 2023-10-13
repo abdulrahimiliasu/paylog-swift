@@ -26,7 +26,7 @@ struct PlanCardView: View {
         }
     }
 
-    func expandCard() { withAnimation(springAnimation) { 
+    func expandCard() { withAnimation(springAnimation) {
         isOpen.toggle()
         HapticsManager.impact(.light)
     }}
@@ -44,7 +44,7 @@ struct PlanCardView: View {
                     }
                 }
                 Spacer()
-                Button { expandCard() } label: { Text("Details").font(.caption) }
+                Button { expandCard() } label: { Text(isOpen ? "Close" : "Details").font(.caption) }
             }
             .contentShape(Rectangle())
             .onTapGesture { expandCard() }
@@ -52,25 +52,30 @@ struct PlanCardView: View {
             if isOpen {
                 let planCurrency = planStore.getPlanCurrency(plan)
                 let totalFlowAmount = planStore.getTotalFlowAmountOf(plan: plan)
-                VStack {
-                    HStack(spacing: 0) {
-                        Text("Total: \(planCurrency) \(totalFlowAmount)")
-                            .contentTransition(.numericText(value: Double(totalFlowAmount)))
-                            .bold()
-                            .font(.callout)
-                        Spacer()
-                        RoundButton(image: "trash.circle.fill", font: .title, foregroundColor: .red, symbolRenderingMode: .monochrome) {
+                VStack(spacing: 10) {
+                    HStack {
+                        RoundButton(image: "trash.circle.fill", font: .system(size: 30), foregroundColor: .red, symbolRenderingMode: .monochrome) {
                             isConfirmDeletion.toggle()
                         }
+                        Spacer()
                         NavigationLink {
                             EditPlanView(plan: plan)
                         } label: {
-                            Label("Edit Plan", systemImage: "square.and.pencil.circle.fill")
+                            Label("Edit", systemImage: "square.and.pencil.circle.fill")
                                 .labelStyle(.iconOnly)
                                 .symbolRenderingMode(.hierarchical)
-                                .font(.title)
+                                .font(.system(size: 30))
                         }
                     }
+                    HStack {
+                        Text("Total:")
+                        Spacer()
+                        Text("\(planCurrency) \(totalFlowAmount)")
+                    }
+                    .contentTransition(.numericText(value: Double(totalFlowAmount)))
+                    .bold()
+                    .font(.callout)
+                    Divider()
                     ScrollView {
                         LazyVStack(spacing: 10) {
                             ForEach($plan.flows) { $flow in

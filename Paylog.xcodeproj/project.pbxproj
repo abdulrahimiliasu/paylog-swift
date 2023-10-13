@@ -65,6 +65,7 @@
 		48F1FE3B2A6BF13800A0CC38 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */; };
 		48F9DC9B2AD1C13F0088674A /* AuthenticatationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9DC9A2AD1C13F0088674A /* AuthenticatationView.swift */; };
 		48F9DC9D2AD1C7090088674A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9DC9C2AD1C7090088674A /* HomeView.swift */; };
+		48FB96BA2AD9ADB50059DBC6 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB96B92AD9ADB50059DBC6 /* FloatingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		48F9DC9A2AD1C13F0088674A /* AuthenticatationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatationView.swift; sourceTree = "<group>"; };
 		48F9DC9C2AD1C7090088674A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		48FB96B92AD9ADB50059DBC6 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +391,7 @@
 			children = (
 				48F1FE3A2A6BF13800A0CC38 /* RoundButton.swift */,
 				4879EAA62A7442C100E5429F /* PrimaryButton.swift */,
+				48FB96B92AD9ADB50059DBC6 /* FloatingButton.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				4833D69D2A6C2B0700BB8BE5 /* PlanStore.swift in Sources */,
 				48F1FE382A6BEA1600A0CC38 /* PlanCardView.swift in Sources */,
 				48B721E02AD3611C00B2DA5C /* Haptics.swift in Sources */,
+				48FB96BA2AD9ADB50059DBC6 /* FloatingButton.swift in Sources */,
 				4879EAAE2A7586C200E5429F /* ViewExtension.swift in Sources */,
 				4889DEAC2A6B154E0027C43E /* Constants.swift in Sources */,
 				48F1FE362A6BE31B00A0CC38 /* FlowCardView.swift in Sources */,
