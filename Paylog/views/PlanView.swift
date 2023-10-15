@@ -34,7 +34,6 @@ struct PlanView: View {
                         .font(.headline)
                         .padding(.vertical, 5)
                         .focused($currentTextFieldFocus, equals: .title)
-                        .onAppear { if !isFlowModalPresented { currentTextFieldFocus = .title } }
                         .onSubmit { currentTextFieldFocus = .description }
                     TextField("Description", text: $plan.description)
                         .font(.subheadline)
@@ -75,7 +74,7 @@ struct PlanView: View {
                 AddNewFlowToPlanView(plan: $plan, willAddNewFlow: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
                     .padding()
                     .background(Color(AppColors.secondary))
-             
+
             })
             .overlay {
                 AddFlowModalView(plan: $plan, isFlowModalPresented: $isFlowModalPresented, focusedField: $currentTextFieldFocus)
@@ -86,7 +85,7 @@ struct PlanView: View {
 
 struct PlanView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanView(plan: .constant(Plan(title: "Some Plan", description: "Some desc", flows: [Flow(title: "Bus Ticket", price: 1000, isChecked: false)])))
+        PlanView(plan: .constant(Plan(title: "Some Plan", description: "Some desc", flows: [Flow(title: "Bus Ticket", price: 1000, isChecked: false), Flow(title: "Bus Ticket 2", price: 2000, isChecked: true)])))
             .environmentObject(PlanStore())
             .environmentObject(SupabaseRepository.getInstance(supabaseClient))
     }

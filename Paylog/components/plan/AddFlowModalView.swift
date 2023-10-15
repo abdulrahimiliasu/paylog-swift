@@ -38,7 +38,7 @@ struct AddFlowModalView: View {
 
     var body: some View {
         let currency = planStore.getPlanCurrency(plan)
-        let priceFormatter = getNumberFormatter(defaultCurrency: currency)
+        let priceFormatter = getNumberFormatter(currency: currency)
 
         return VStack(spacing: 10) {
             HStack {
@@ -57,12 +57,7 @@ struct AddFlowModalView: View {
                     .focused(self.focusedField, equals: .modalPrice)
                     .foregroundColor(.secondary)
                     .onSubmit { self.focusedField.wrappedValue = .modalPrice }
-                Picker(selection: $flowToAdd.type, label: Text("type")) {
-                    Text("Expense").tag(FlowType.expense)
-                    Text("Normal").tag(FlowType.normal)
-                    Text("Income").tag(FlowType.income)
-                }
-                .pickerStyle(.segmented)
+                FlowTypePickerView(flow: $flowToAdd)
             }
         }
         .padding(20)

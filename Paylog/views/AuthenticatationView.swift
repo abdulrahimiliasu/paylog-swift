@@ -42,13 +42,13 @@ struct AuthenticatationView: View {
                 }
             }
         }
-        .alert(Text("Something went wrong !"),
+        .alert(Text("Couldn't Autheneticate User!"),
                isPresented: self.$isAuthenticationError,
-               actions: { Button(role: .cancel, action: {}, label: { Text("Okay") }) },
+               actions: { Button(role: .cancel, action: {}, label: { Text("Dismiss") }) },
                message: { Text("An error occurred during authentication, please try again!") })
         .padding()
         .onChange(of: self.scenePhase) { _, newPhase in
-            guard newPhase == .active else { return }
+            guard newPhase == .active && !self.isAuthenticationError else { return }
             self.settings.authenticateDeviceOwner(onSuccess: self.onSuccess, onError: self.onError)
         }
     }

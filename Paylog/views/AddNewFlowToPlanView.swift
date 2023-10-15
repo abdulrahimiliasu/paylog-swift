@@ -28,9 +28,11 @@ struct AddNewFlowToPlanView: View {
             Spacer()
             RoundButton(image: willAddNewFlow ? "chevron.down.circle.fill" : "plus.circle.fill") {
                 self.focusedField.wrappedValue = .modalTitle
-                withAnimation(springAnimation) { 
+                withAnimation(springAnimation) {
                     willAddNewFlow.toggle()
                     HapticsManager.impact(.soft)
+                    guard !willAddNewFlow else { return }
+                    focusedField.wrappedValue = .none
                 }
             }
         }
